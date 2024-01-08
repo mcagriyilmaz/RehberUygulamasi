@@ -1,0 +1,183 @@
+﻿@model List<RehberUygulamasi.Models.Rehber>
+@{
+    ViewData["Title"] = "KullaniciEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<partial name="_Notification"/>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Register</title>
+
+   <!-- Custom fonts for this template-->
+	
+	
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.css" rel="stylesheet" />
+	<link href="~/startbootstrap-sb-admin-2-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet" />
+
+
+
+	<!-- Custom styles for this template-->
+	
+    <link href="~/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.css" rel="stylesheet" />
+	<link href="~/startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet" />
+
+   
+
+
+</head>
+    
+<body class="bg-gradient-primary">
+    
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block "><img src="/startbootstrap-sb-admin-2-gh-pages/img/663338.png" width="420" height="520"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Kişi Kayıt Et!</h1>
+                            </div>
+                            <form class="user" method="post">
+
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        @*<input type="text" class="form-control form-control-user" id="Ad" placeholder="Ad:">*@
+                                        @Html.TextBox("Ad",null,new{@class = "form-control form-control-user", @placeholder="Ad:"})
+                                    </div>
+                                    <div class="col-sm-6">
+                                        @*<input type="text" class="form-control form-control-user" id="Soyad"
+                                               placeholder="Soyad:">*@
+                                        @Html.TextBox("Soyad",null,new{@class = "form-control form-control-user", @placeholder="Soyad:"})
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="form-group">
+									@* <input type="text" class="form-control form-control-user" name="TelefonNumarasi" id="TelefonNumarasi" value="" placeholder="Telefon Numarası:">*@
+                                    @Html.TextBox("TelefonNumarasi",null,new{@class = "form-control form-control-user", @placeholder="TelefonNumarasi:"})
+                                </div>
+
+								<div class="form-group">
+									@*<input type="email" class="form-control form-control-user" id="Mail"
+									placeholder="Mail Adresi:">*@
+									@Html.TextBox("Mail",null,new{@class = "form-control form-control-user", @placeholder="Mail:"})
+								</div>
+								
+                                <div class="form-group">
+                                    <div>
+                                        @*<input type="date" class="form-control form-control-user" name="DogumTarihi" id="DogumTarihi" placeholder="Doğum Tarihi:">*@
+                                        @Html.TextBox("DogumTarih",null,new{@class = "form-control form-control-user", @placeholder="DogumTarih:"})
+                                    </div>
+                                </div>
+
+								<div class="form-group">
+									<div>
+										@* <input type="text" class="form-control form-control-user" id="Adres" placeholder="Adres">*@
+                                        @Html.TextBox("Adres",null,new{@class = "form-control form-control-user", @placeholder="Adres:"})
+									</div>
+								</div>
+
+                                <div>
+                                    <div class="form-group" >
+                                        @*<input type="text" class="form-control form-control-user" name="Not" id="Not" placeholder="Not:">*@
+                                        @Html.TextBox("Hakkinda",null,new{@class = "form-control form-control-user", @placeholder="Hakkında:"})
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <div >
+                                        <button id="Kayit" type="submit" class="btn btn-primary btn-user btn-block">Kişiyi Rehbere Kaydet</button>
+                                    </div>
+
+                                </div>
+                                
+                                <hr>
+                               
+                            </form>
+                            <hr>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
+    <a href="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.map"></a>
+
+    
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <a href="~/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.js.map"></a>
+    <a href="~/startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js.map"></a>
+
+    <!-- Core plugin JavaScript-->
+
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.compatibility.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/vendor/chart.js/chart.min.js"></script>
+
+
+    <!-- Page level custom scripts -->
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-area-demo.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-pie-demo.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/js/demo/chart-bar-demo.js"></script>
+    <script src="~/startbootstrap-sb-admin-2-gh-pages/js/demo/datatables-demo.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script src="jquery.js" type="text/javascript"></script>
+<script src="jquery.maskedinput.js" type="text/javascript"></script>
+         <script>
+        $('#TelefonNumarasi').inputmask("(999) 999-9999");
+        
+        
+    </script>
+
+    <script src="https://unpkg.com/imask"></script>
+
+    <script>
+        var dateMask = IMask(
+  document.getElementById('DogumTarih'),
+  {
+    mask: Date,
+    min: new Date(1800, 12, 31),
+                max: new Date(2024, 12, 31),
+    lazy: false
+  });
+    </script>
+
+    
+   
+    
+  
+</body>
+
+</html>
+    
+        
+

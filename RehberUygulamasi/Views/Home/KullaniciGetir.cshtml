@@ -1,0 +1,144 @@
+﻿@model RehberUygulamasi.Models.Rehber
+@{
+    ViewData["Title"] = "KullaniciGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@using (Html.BeginForm("RehberGuncelle","Home",FormMethod.Post))
+{
+            
+            <b>ID</b>
+             @Html.TextBoxFor( Model => Model.Id,new{@readonly = true,@class = "form-control form-control-user"})
+            <br/>
+            
+            <b>Ad</b>
+            @Html.TextBoxFor( Model => Model.Ad, new{@class = "form-control form-control-user"})
+            <br/>
+            
+            <b>Soyad</b>
+            @Html.TextBoxFor( Model => Model.Soyad, new{@class = "form-control form-control-user"})
+            <br />
+
+            <b>Telefon Numarası</b>
+            @Html.TextBoxFor( Model => Model.TelefonNumarasi, new{@class = "form-control form-control-user"})
+   
+            <b>Mail</b>
+            @Html.TextBoxFor( Model => Model.Mail, new{@class = "form-control form-control-user"})
+    
+            <b>Doğum Tarihi</b>
+            @Html.TextBoxFor( Model => Model.DogumTarih, new{@class = "form-control form-control-user"})
+        
+            <b>Adres</b>
+            @Html.TextBoxFor( Model => Model.Adres, new{@class = "form-control form-control-user"})
+       
+            <b>Hakkında</b>
+            @Html.TextBoxFor( Model => Model.Hakkinda, new{@class = "form-control form-control-user"})
+     
+            <button id="Kayit" type="submit" class="btn btn-primary btn-user btn-block"> Güncelle</button>
+     
+}*@
+<head><partial name="_Notification"/></head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block "><img src="/startbootstrap-sb-admin-2-gh-pages/img/663338.png" width="420" height="520"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Kişi Güncelle!</h1>
+                            </div>
+                            <form class="user" method="post" action="@Url.Action("RehberGuncelle","Home")" >
+
+                                @Html.HiddenFor(Model => Model.Id)
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        @*<input type="text" class="form-control form-control-user" id="Ad" placeholder="Ad:">*@
+                                        @Html.TextBox("Ad",null,new{@class = "form-control form-control-user", @placeholder="Ad:"})
+                                    </div>
+                                    <div class="col-sm-6">
+                                        @*<input type="text" class="form-control form-control-user" id="Soyad"
+                                        placeholder="Soyad:">*@
+                                        @Html.TextBox("Soyad",null,new{@class = "form-control form-control-user", @placeholder="Soyad:"})
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @* <input type="text" class="form-control form-control-user" name="TelefonNumarasi" id="TelefonNumarasi" value="" placeholder="Telefon Numarası:">*@
+                                    @Html.TextBox("TelefonNumarasi",null,new{@class = "form-control form-control-user", @placeholder="TelefonNumarasi:"})
+                                </div>
+
+                                <div class="form-group">
+                                    @*<input type="email" class="form-control form-control-user" id="Mail"
+                                    placeholder="Mail Adresi:">*@
+                                    @Html.TextBox("Mail",null,new{@class = "form-control form-control-user", @placeholder="Mail:"})
+                                </div>
+
+                                <div class="form-group">
+                                    <div>
+                                        @*<input type="date" class="form-control form-control-user" name="DogumTarihi" id="DogumTarihi" placeholder="Doğum Tarihi:">*@
+                                        @Html.TextBox("DogumTarih",null,new{@class = "form-control form-control-user", @placeholder="DogumTarih:"})
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div>
+                                        @* <input type="text" class="form-control form-control-user" id="Adres" placeholder="Adres">*@
+                                        @Html.TextBox("Adres",null,new{@class = "form-control form-control-user", @placeholder="Adres:"})
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="form-group">
+                                        @*<input type="text" class="form-control form-control-user" name="Not" id="Not" placeholder="Not:">*@
+                                        @Html.TextBox("Hakkinda",null,new{@class = "form-control form-control-user", @placeholder="Hakkında:"})
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <div>
+                                        <button id="Kayit" type="submit" class="btn btn-primary btn-user btn-block">Kişiyi Güncelle</button>
+                                    </div>
+
+                                </div>
+
+                                <hr>
+
+                            </form>
+                            <hr>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery.maskedinput.js" type="text/javascript"></script>
+         <script>
+        $('#TelefonNumarasi').inputmask("(999) 999-9999");
+    
+    </script>
+     <script src="https://unpkg.com/imask"></script>
+
+    <script>
+        var dateMask = IMask(
+  document.getElementById('DogumTarih'),
+  {
+    mask: Date,
+    min: new Date(1800, 12, 31),
+                max: new Date(2024, 12, 31),
+    lazy: false
+  });
+    </script>
